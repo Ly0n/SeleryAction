@@ -4,12 +4,9 @@
 name: openselery
 
 on:
-  release:
-    types: [created]
-    # Sequence of patterns matched against refs/tags
-    tags:
-      - v*  # Event to all release tags
-        
+  push:
+    branches: 
+              - master        
 
 jobs:
   openselery:

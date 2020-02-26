@@ -1,0 +1,94 @@
+# ./.github/workflows/openselery
+# Use Openselery as a simple Github action on your project workflow.
+# For configuration create an .openselery.yml file in your project repo.
+name: openselery
+
+on:
+  release:
+    types: [created]
+    # Sequence of patterns matched against refs/tags
+    tags:
+      - v*  # Event to all release tags
+        
+
+jobs:
+  openselery:
+    name: openselery
+    runs-on: ubuntu-latest
+    steps:
+      # Check out the repo openselery is working on.
+      - uses: actions/checkout@v1
+      - name: Pull openselery from dockerhub
+        run: docker pull openselery/openselery
+      - name: Create Result folder
+        run: mkdir ./results
+      - name: Give everyone permission to write to this folder
+        run: chmod a+rw ./results
+      - name: Create openselery configuation
+        run: |
+              if [ ! -f ./selery.yml ]
+              then
+                echo "No local config found. Create selery.yml"
+                touch ./selery.yml
+                chmod 700 ./selery.yml
+                cat > ./selery.yml <<EOF
+                # simulation let you run without payout at the end  
+                simulation: True
+                # include the target folders contributors
+                include_self: True
+                # include the dependencies of the target folder
+                include_dependencies: False
+                # include the tooling and runtime from the file
+                include_tooling_and_runtime: False
+                # minimum contributions made to be considered
+                min_contributions: 1
+                # check the public address from FUNDING.yml vs the secret coinbase address
+                check_equal_privat_and_public_address: False
+                # Skip email sended by coinbase
+                skip_email: False
+                # the amount of eth send per user
+                eth_per_transaction: 0.000002
+                # numbers of contributors payout per run
+                contributor_payout_count: 1
+                # the total amount of payout per run
+                total_payout_per_run: 0.000002
+                # message send with every coinbase email. Never send an URL.
+                email_note: "Fresh OpenCelery Funding"
+                # weight set for all include contributors
+                uniform_weight: 1
+              EOF
+              else 
+                echo "Use existing local selery.yml"
+              fi
+              cat ./selery.yml
+      # Run Openselery on the current folder.
+      - name: Run openselery on sources
+        run:  > 
+                docker run --rm 
+                --env GITHUB_TOKEN=$GITHUB_TOKEN 
+                --env LIBRARIES_API_KEY=$LIBRARIES_API_KEY 
+                --env COINBASE_TOKEN=$COINBASE_TOKEN 
+                --env COINBASE_SECRET=$COINBASE_SECRET
+                -v $PWD/:/home/selery/runningrepo/ 
+                -v $PWD/results:/home/selery/results/
+                openselery/openselery 
+                bash -c 'python3 selery.py --directory=/home/selery/runningrepo/ --config=/home/selery/runningrepo/selery.yml  --results_dir=/home/selery/results/' 
+        # Never print
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          LIBRARIES_API_KEY: ${{ secrets.LIBRARIES_API_KEY }}
+          COINBASE_TOKEN: ${{ secrets.COINBASE_TOKEN }}
+          COINBASE_SECRET: ${{ secrets.COINBASE_SECRET }}
+        # Upload the receipt file to github artifact.
+      - uses: actions/upload-artifact@v1
+        with:
+          name: Logs_and_Billing
+          path: ./results/
+
+      - name: Check for payout receipt.txt
+        run: | 
+              cat ./results/receipt.txt 
+              echo "Payout receipt found"
+                
+
+                

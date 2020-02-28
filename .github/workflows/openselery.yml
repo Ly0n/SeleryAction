@@ -18,9 +18,9 @@ jobs:
       - name: Pull openselery from dockerhub
         run: docker pull openselery/openselery
       - name: Create Result folder
-        run: mkdir ./results
+        run: mkdir ~/results
       - name: Give everyone permission to write to this folder
-        run: chmod a+rw ./results
+        run: chmod a+rw ~/results
       - name: Create openselery configuation
         run: |
               if [ ! -f ./selery.yml ]
@@ -57,7 +57,7 @@ jobs:
               else 
                 echo "Use existing local selery.yml"
               fi
-              cat ./selery.yml
+              cat ~/selery.yml
       # Run Openselery on the current folder.
       - name: Run openselery on sources
         run:  > 

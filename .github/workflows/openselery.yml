@@ -67,7 +67,7 @@ jobs:
                 --env COINBASE_TOKEN=$COINBASE_TOKEN 
                 --env COINBASE_SECRET=$COINBASE_SECRET
                 -v $PWD/:/home/selery/runningrepo/ 
-                -v ~/results:/home/selery/results/
+                -v $PWD/results:/home/selery/results/
                 openselery/openselery 
                 bash -c 'python3 /home/selery/openselery/selery.py --directory=/home/selery/runningrepo/ --config=/home/selery/runningrepo/selery.yml  --results_dir=/home/selery/results/' 
         # Never print
@@ -80,11 +80,11 @@ jobs:
       - uses: actions/upload-artifact@v1
         with:
           name: Logs_and_Billing
-          path: ~/results/
+          path: $PWD/results/
 
       - name: Check for payout receipt.txt
         run: | 
-              cat ~/results/receipt.txt 
+              cat $PWD/results/receipt.txt 
               echo "Payout receipt found"
                 
 

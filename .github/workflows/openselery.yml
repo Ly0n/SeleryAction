@@ -18,17 +18,17 @@ jobs:
       - name: Pull openselery from dockerhub
         run: docker pull openselery/openselery
       - name: Create Result folder
-        run: mkdir ~/results
+        run: mkdir $PWD/results
       - name: Give everyone permission to write to this folder
-        run: chmod a+rw ~/results
+        run: chmod a+rw $PWD/results
       - name: Create openselery configuation
         run: |
-              if [ ! -f ~/selery.yml ]
+              if [ ! -f $PWD/selery.yml ]
               then
                 echo "No local config found. Create selery.yml"
-                touch ~/selery.yml
-                chmod 700 ~/selery.yml
-                cat > ~/selery.yml <<EOF
+                touch $PWD/selery.yml
+                chmod 700 $PWD/selery.yml
+                cat > $PWD/selery.yml <<EOF
                 # simulation let you run without payout at the end  
                 simulation: True
                 # include the target folders contributors
@@ -57,7 +57,7 @@ jobs:
               else 
                 echo "Use existing local selery.yml"
               fi
-              cat ~/selery.yml
+              cat $PWD/selery.yml
       # Run Openselery on the current folder.
       - name: Run openselery on sources
         run:  > 
@@ -67,7 +67,7 @@ jobs:
                 --env COINBASE_TOKEN=$COINBASE_TOKEN 
                 --env COINBASE_SECRET=$COINBASE_SECRET
                 -v $PWD/:/home/selery/runningrepo/ 
-                -v $PWD/results:/home/selery/results/
+                -v ~/results:/home/selery/results/
                 openselery/openselery 
                 bash -c 'python3 /home/selery/openselery/selery.py --directory=/home/selery/runningrepo/ --config=/home/selery/runningrepo/selery.yml  --results_dir=/home/selery/results/' 
         # Never print

@@ -23,12 +23,12 @@ jobs:
         run: chmod a+rw ~/results
       - name: Create openselery configuation
         run: |
-              if [ ! -f ./selery.yml ]
+              if [ ! -f ~/selery.yml ]
               then
                 echo "No local config found. Create selery.yml"
-                touch ./selery.yml
+                touch ~/selery.yml
                 chmod 700 ./selery.yml
-                cat > ./selery.yml <<EOF
+                cat > ~/selery.yml <<EOF
                 # simulation let you run without payout at the end  
                 simulation: True
                 # include the target folders contributors

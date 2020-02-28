@@ -27,7 +27,7 @@ jobs:
               then
                 echo "No local config found. Create selery.yml"
                 touch ~/selery.yml
-                chmod 700 ./selery.yml
+                chmod 700 ~/selery.yml
                 cat > ~/selery.yml <<EOF
                 # simulation let you run without payout at the end  
                 simulation: True
@@ -80,11 +80,11 @@ jobs:
       - uses: actions/upload-artifact@v1
         with:
           name: Logs_and_Billing
-          path: ./results/
+          path: ~/results/
 
       - name: Check for payout receipt.txt
         run: | 
-              cat ./results/receipt.txt 
+              cat ~/results/receipt.txt 
               echo "Payout receipt found"
                 
 

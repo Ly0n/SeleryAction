@@ -7,7 +7,8 @@ on:
   push:
     branches: 
               - master        
-
+env: 
+    RESULTSDIR: /home/runner/work/.openselery/results/
 jobs:
   openselery:
     name: openselery
@@ -19,7 +20,6 @@ jobs:
         run: docker pull openselery/openselery
       - name: Create Result folder
         run: | 
-              RESULTSDIR=${HOME}/.openselery/results 
               mkdir -p $RESULTSDIR
               chmod a+rw $RESULTSDIR
       - name: Create openselery configuation
@@ -83,7 +83,7 @@ jobs:
       - uses: actions/upload-artifact@v1
         with:
           name: Logs_and_Billing
-          path: ${HOME}/.openselery/results
+          path: $RESULTSDIR
 
       - name: Check for payout receipt.txt
         run: | 

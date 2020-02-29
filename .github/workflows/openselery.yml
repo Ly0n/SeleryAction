@@ -87,7 +87,7 @@ jobs:
 
       - name: Check for payout receipt.txt
         run: | 
-              cat ${HOME}/.openselery/receipt.txt 
+              cat /home/runner/work/.openselery/results/receipt.txt 
               echo "Payout receipt found"
                 
 

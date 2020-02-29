@@ -20,7 +20,7 @@ jobs:
       - name: Create Result folder
         run: RESULTSDIR=${HOME}/.openselery/results && mkdir -p $RESULTSDIR
       - name: Give everyone permission to write to this folder
-        run: chmod a+rw $PWD/results
+        run: chmod a+rw $RESULTSDIR/results
       - name: Create openselery configuation
         run: |
               if [ ! -f $PWD/selery.yml ]

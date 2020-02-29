@@ -18,9 +18,10 @@ jobs:
       - name: Pull openselery from dockerhub
         run: docker pull openselery/openselery
       - name: Create Result folder
-        run: RESULTSDIR=${HOME}/.openselery/results && mkdir -p $RESULTSDIR
-      - name: Give everyone permission to write to this folder
-        run: chmod a+rw $RESULTSDIR/results
+        run: | 
+              RESULTSDIR=${HOME}/.openselery/results 
+              mkdir -p $RESULTSDIR
+              chmod a+rw $RESULTSDIR
       - name: Create openselery configuation
         run: |
               if [ ! -f $PWD/selery.yml ]
@@ -82,11 +83,11 @@ jobs:
       - uses: actions/upload-artifact@v1
         with:
           name: Logs_and_Billing
-          path: $RESULTSDIR
+          path: ${HOME}/.openselery/results
 
       - name: Check for payout receipt.txt
         run: | 
-              cat $RESULTSDIR/results 
+              cat ${HOME}/.openselery/receipt.txt 
               echo "Payout receipt found"
                 
 

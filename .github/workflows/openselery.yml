@@ -6,7 +6,7 @@ name: openselery
 on:
   push:
     branches: 
-              - master        
+      - master        
 env: 
     RESULTSDIR: /home/runner/work/.openselery/results/
 jobs:

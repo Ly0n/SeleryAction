@@ -18,7 +18,7 @@ jobs:
       - name: Pull openselery from dockerhub
         run: docker pull openselery/openselery
       - name: Create Result folder
-        run: mkdir $PWD/results
+        run: mkdir ~/.openselery/results
       - name: Give everyone permission to write to this folder
         run: chmod a+rw $PWD/results
       - name: Create openselery configuation
@@ -69,7 +69,7 @@ jobs:
                 --env COINBASE_TOKEN=$COINBASE_TOKEN 
                 --env COINBASE_SECRET=$COINBASE_SECRET
                 -v $PWD/:/home/selery/runningrepo/ 
-                -v $PWD/results:/home/selery/results/
+                -v ~/.openselery/results:/home/selery/results/
                 openselery/openselery 
                 bash -c 'python3 /home/selery/openselery/selery.py --directory=/home/selery/runningrepo/ --config=/home/selery/runningrepo/selery.yml  --results_dir=/home/selery/results/' 
         # Never print
@@ -82,11 +82,11 @@ jobs:
       - uses: actions/upload-artifact@v1
         with:
           name: Logs_and_Billing
-          path: $PWD/results/
+          path: ~/.openselery/results
 
       - name: Check for payout receipt.txt
         run: | 
-              cat $PWD/results/receipt.txt 
+              cat ~/.openselery/results 
               echo "Payout receipt found"
                 
 

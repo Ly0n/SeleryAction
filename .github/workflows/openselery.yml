@@ -22,6 +22,7 @@ jobs:
           LIBRARIES_API_KEY_CI: ${{ secrets.LIBRARIES_API_KEY }}
           COINBASE_TOKEN_CI: ${{ secrets.COINBASE_TOKEN }}
           COINBASE_SECRET_CI: ${{ secrets.COINBASE_SECRET }}
+      - name: Check for Payout 
       - run: | 
               cat /home/runner/work/.openselery/results/receipt.txt 
               echo "Payout receipt found"

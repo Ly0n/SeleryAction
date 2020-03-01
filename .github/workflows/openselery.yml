@@ -16,7 +16,7 @@ jobs:
     steps:
       # Check out the repo openselery is working on.
       - uses: actions/checkout@v1
-      - uses: protontypes/actionselery@v0.0.2
+      - uses: protontypes/actionselery
         env: 
           GITHUB_TOKEN_CI: ${{ secrets.GITHUB_TOKEN }}
           LIBRARIES_API_KEY_CI: ${{ secrets.LIBRARIES_API_KEY }}

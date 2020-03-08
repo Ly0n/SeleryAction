@@ -37,7 +37,7 @@ jobs:
                 chmod 700 ./selery.yml
                 cat > ./selery.yml <<EOF
                 # simulation let you run without payout at the end  
-                simulation: False
+                simulation: True
                 # create inspection loggings
                 inspection: False
                 # include the target folders contributors

@@ -79,7 +79,7 @@ jobs:
                 --directory=/home/selery/runningrepo/ --config=/home/selery/runningrepo/selery.yml  --results_dir=/home/selery/results/ 
         # Never print
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_API }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           LIBRARIES_API_KEY: ${{ secrets.LIBRARIES_API_KEY }}
           COINBASE_TOKEN: ${{ secrets.COINBASE_TOKEN }}
           COINBASE_SECRET: ${{ secrets.COINBASE_SECRET }}

@@ -38,6 +38,8 @@ jobs:
                 cat > ./selery.yml <<EOF
                 # simulation let you run without payout at the end  
                 simulation: False
+                # create inspection loggings
+                inspection: False
                 # include the target folders contributors
                 include_self: True
                 # include the dependencies of the target folder

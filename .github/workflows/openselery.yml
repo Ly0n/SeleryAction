@@ -71,20 +71,14 @@ jobs:
       - name: Run openselery on sources
         run:  > 
                 docker run --rm 
-                --env GITHUB_TOKEN=$GITHUB_TOKEN 
-                --env LIBRARIES_API_KEY=$LIBRARIES_API_KEY 
-                --env COINBASE_TOKEN=$COINBASE_TOKEN 
-                --env COINBASE_SECRET=$COINBASE_SECRET
+                --env GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} 
+                --env LIBRARIES_API_KEY=${{ secrets.LIBRARIES_API_KEY }}
+                --env COINBASE_TOKEN=${{ secrets.COINBASE_TOKEN }}
+                --env COINBASE_SECRET=${{ secrets.COINBASE_SECRET }}
                 -v $PWD/:/home/selery/runningrepo/ 
                 -v $PWD/results:/home/selery/results/
                 openselery/openselery 
                 --directory=/home/selery/runningrepo/ --config=/home/selery/runningrepo/selery.yml  --results_dir=/home/selery/results/ 
-        # Never print
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_API_TOKEN }}
-          LIBRARIES_API_KEY: ${{ secrets.LIBRARIES_API_KEY }}
-          COINBASE_TOKEN: ${{ secrets.COINBASE_TOKEN }}
-          COINBASE_SECRET: ${{ secrets.COINBASE_SECRET }}
         # Upload the receipt file to github artifact.
       - uses: actions/upload-artifact@v1
         with:

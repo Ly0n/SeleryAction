@@ -7,8 +7,7 @@ A minimal project example showing openselery integration.
 * Dependencies scanning for most languages to inlcude all developers. 
 * Only the sender needs an Coinbase account in the first instance.
 * Investor or Developer creates a transparent payout with public CI logs.
-
-[![Donate with bitcoin](https://en.cryptobadges.io/badge/small/3PVdiyLPR7MgaeFRJLW9mfuESZS2aAPX9w)](https://en.cryptobadges.io/donate/3PVdiyLPR7MgaeFRJLW9mfuESZS2aAPX9w)     
+  
 
 # Github Action Integration
 
@@ -39,3 +38,5 @@ This also changes the workflow behavior so that Github API calls are more stable
 ACTIONS_RUNNER_DEBUG to true. 
 ```
 
+
+[![Donate with bitcoin](https://en.cryptobadges.io/badge/small/3PVdiyLPR7MgaeFRJLW9mfuESZS2aAPX9w)](https://en.cryptobadges.io/donate/3PVdiyLPR7MgaeFRJLW9mfuESZS2aAPX9w)   

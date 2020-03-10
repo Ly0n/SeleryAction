@@ -19,3 +19,7 @@ Modify the configuration in the `openselery.yml` file to your needs.
 4. Depending on the `openselery.yml` a payout will be triggered. The default setting runs OpenSelery with every new version of the destination project. 
 
 5. Protect your master branch in the Github Setting under 'Branches'. Activate the 'Restrict who can push to matching branches' option. 
+
+6. To enable runner diagnostic logging, set the following secret in the repository that contains the workflow: ACTIONS_RUNNER_DEBUG to true. This also changes the workflow behavior so that Github API calls are more stable.
+
+

@@ -4,9 +4,9 @@
 A minimal project example showing openselery:     
 
 * Software defined developers payout fully transparent to the bones for your Github project.
-* Dependencies scanning for most languages to inlcude all developers. 
+* Dependencies scanning for most languages to include all developers. 
 * Only the sender needs an Coinbase account in the first instance.
-* Investor or developer creates a transparent payout with public CI logs.
+* Investor creates a transparent payout with public CI logs.
   
 
 ## Github Action Integration

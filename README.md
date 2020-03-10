@@ -1,6 +1,7 @@
 # OpenSelery by Example
-Simple project example showing openselery integration for multiple platforms.
-Just add batches with address to your README.md and put `.github/workflows/openselery.yml` to your project.             
+A Simple project example showing openselery integration for multiple platforms.    
+Just add badges with your Bitcoin address to your README.md and copy `.github/workflows/openselery.yml` to your project.    
+
 Modify the configuration in the `openselery.yml` to your needs.  
 
 [![Actions Status](https://github.com/protontypes/seleryexample/workflows/openselery/badge.svg)](https://github.com/protontypes/seleryexample/actions)

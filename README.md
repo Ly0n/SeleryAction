@@ -1,11 +1,12 @@
 # OpenSelery by Example
-[![Actions Status](https://github.com/protontypes/seleryexample/workflows/openselery/badge.svg)]
+[![Actions Status](https://github.com/protontypes/seleryexample/workflows/openselery/badge.svg)](https://github.com/protontypes/seleryexample/actions)
+
 A minimal project example showing openselery integration.     
 
-* Software defined payout fully transparent to the bones
-* Runs as a CLI or in Github continuous integration
-* Only the sender needs an Coinbase account in the first instance
-* Investor creates a transparent payout with public CI logs
+* Software defined developers payout fully transparent to the bones for your Github project.
+* Dependencies scanning for most languages to inlcude all developers. 
+* Only the sender needs an Coinbase account in the first instance.
+* Investor or Developer creates a transparent payout with public CI logs.
 
 [![Donate with bitcoin](https://en.cryptobadges.io/badge/small/3PVdiyLPR7MgaeFRJLW9mfuESZS2aAPX9w)](https://en.cryptobadges.io/donate/3PVdiyLPR7MgaeFRJLW9mfuESZS2aAPX9w)     
 

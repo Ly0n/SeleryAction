@@ -20,8 +20,9 @@ Modify the configuration in the `openselery.yml` to your needs.
 
 5. Protect your master branch in the Github Setting under `Branches`. Activate the `Restrict who can push to matching branches` option. 
 
-6. To enable runner diagnostic logging, set the following secret in the repository that contains the workflow: 
+6. To enable runner diagnostic logging, set the following secret in the repository that contains the workflow.
+This also changes the workflow behavior so that Github API calls are more stable:
 ```
 ACTIONS_RUNNER_DEBUG to true. 
 ```
-This also changes the workflow behavior so that Github API calls are more stable.
+

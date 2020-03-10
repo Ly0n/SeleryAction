@@ -1,15 +1,21 @@
 # OpenSelery by Example
-A minimal project example showing openselery integration.    
-Modify the configuration in the `openselery.yml` to your needs.  
+[![Actions Status](https://github.com/protontypes/seleryexample/workflows/openselery/badge.svg)]A minimal project example showing openselery integration.     
 
-[![Actions Status](https://github.com/protontypes/seleryexample/workflows/openselery/badge.svg)](https://github.com/protontypes/seleryexample/actions)
+> Software defined payout fully transparent to the bones
+
+> Runs as a CLI or in Github continuous integration
+
+> Only the sender needs an Coinbase account in the first instance
+
+> Investor creates a transparent payout to developer with public CI logs
+
 [![Donate with bitcoin](https://en.cryptobadges.io/badge/small/3PVdiyLPR7MgaeFRJLW9mfuESZS2aAPX9w)](https://en.cryptobadges.io/donate/3PVdiyLPR7MgaeFRJLW9mfuESZS2aAPX9w)     
 
 # Github Action Integration
 
 1. The [Gitub](https://github.com/settings/tokens) and [Libraries.io](https://libraries.io/api) tokens are easy to obtain. Simulate payouts without the [coinbase token](https://www.coinbase.com/settings/api) to find the right settings. 
 
-2. Create a dedicated coinbase account with limited amounts. OpenSelery is based on the APIs of The Libraries.io, Github and Coinbase. To provide service you need create tokens in the corresponding accounts. Setting simulation to false will require your coinbase tokens. Configure the [access control settings](https://github.com/protontypes/openselery/wiki/Coinbase-Settings) of the automated coinbase account.
+2. Create a dedicated coinbase account with limited amounts. OpenSelery is based on the APIs of The Libraries.io, Github and Coinbase. To provide service you need to create tokens in the corresponding accounts. Setting simulation to false will require your coinbase tokens. Configure the [access control settings](https://github.com/protontypes/openselery/wiki/Coinbase-Settings) of the automated coinbase account.
 
 3. Never transfer or store large values with automated cryptocurrency wallets. Use recurring automated transaction from another account to recharge you wallet on a regular base. 
 

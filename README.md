@@ -1,7 +1,7 @@
 # OpenSelery by Example
 Simple project example showing openselery integration for multiple platforms.
-Just add batches with your address to your README.md and add the `.github/workflows/openselery.yml` to your project.             
-Modify the configuration in the `openselery.yml` file to your needs.  
+Just add batches with address to your README.md and put `.github/workflows/openselery.yml` to your project.             
+Modify the configuration in the `openselery.yml` to your needs.  
 
 [![Actions Status](https://github.com/protontypes/seleryexample/workflows/openselery/badge.svg)](https://github.com/protontypes/seleryexample/actions)
 [![Donate with bitcoin](https://en.cryptobadges.io/badge/small/3PVdiyLPR7MgaeFRJLW9mfuESZS2aAPX9w)](https://en.cryptobadges.io/donate/3PVdiyLPR7MgaeFRJLW9mfuESZS2aAPX9w)     
@@ -9,7 +9,7 @@ Modify the configuration in the `openselery.yml` file to your needs.
 ### Continuous Integration  
 1. Add the token of libraries.io and coinbase to your [secrets](https://help.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets).
 
-2. You can integrate OpenSelery in your CI by copying the `openselery.yml` file in your `.github/actions/` destination project directory. Check the setting before running your CI Pipeline:
+2. You can integrate OpenSelery in your CI by copying the `openselery.yml` file into your `.github/actions/` destination project directory. Check the setting before running your CI Pipeline:
 
   ```
   cat .github/actions/openselery.yml 
@@ -20,6 +20,8 @@ Modify the configuration in the `openselery.yml` file to your needs.
 
 5. Protect your master branch in the Github Setting under `Branches`. Activate the `Restrict who can push to matching branches` option. 
 
-6. To enable runner diagnostic logging, set the following secret in the repository that contains the workflow: ACTIONS_RUNNER_DEBUG to true. This also changes the workflow behavior so that Github API calls are more stable.
-
-7. Add your bitcoin address to the README.md badge.
+6. To enable runner diagnostic logging, set the following secret in the repository that contains the workflow: 
+```
+ACTIONS_RUNNER_DEBUG to true. 
+```
+This also changes the workflow behavior so that Github API calls are more stable.

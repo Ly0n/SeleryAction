@@ -8,35 +8,26 @@ Modify the configuration in the `openselery.yml` to your needs.
  ### Command-Line Tool
 1. The [Gitub](https://github.com/settings/tokens) and [Libraries.io](https://libraries.io/api) tokens are easy to obtain. Simulate payouts without the [coinbase token](https://www.coinbase.com/settings/api) to find the right settings. Configure the [access control settings](https://github.com/protontypes/openselery/wiki/Coinbase-Settings) of the automated coinbase account.
 
-1. Install with [docker](https://docs.docker.com/install/linux/docker-ce/ubuntu/):
+2. Create a dedicated coinbase account with limited amounts. OpenSelery is based on the APIs of The Libraries.io, Github and Coinbase. To provide service you need create tokens in the corresponding accounts. Setting simulation to false will require your coinbase tokens.
 
-  ```bash
-  cd ~
-  git clone https://github.com/openselery/openselery.git
-  cd openselery
-  ./build.sh
-  ```
+3. Never transfer or store large values with automated cryptocurrency wallets. Use recurring automated transaction from another account to recharge you wallet on a regular base. 
 
-1. Create a dedicated coinbase account with limited amounts. OpenSelery is based on the APIs of The Libraries.io, Github and Coinbase. To provide service you need create tokens in the corresponding accounts. Setting simulation to false will require your coinbase tokens.
-
-1. Never transfer or store large values with automated cryptocurrency wallets. Use recurring automated transaction from another account to recharge you wallet on a regular base. 
-
-1. Transfer some money to this wallet for testing. See the [price list](https://help.coinbase.com/en/coinbase/trading-and-funding/pricing-and-fees/fees.html) for transfering money to the coinbase account.
+4. Transfer some money to this wallet for testing. See the [price list](https://help.coinbase.com/en/coinbase/trading-and-funding/pricing-and-fees/fees.html) for transfering money to the coinbase account.
  
-1. Add the token of libraries.io and coinbase to your [secrets](https://help.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets).
+5. Add the token of libraries.io and coinbase to your [secrets](https://help.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets).
 
-1. You can integrate OpenSelery in your CI by copying the `openselery.yml` file into your `.github/actions/` destination project directory. Check and modify the setting before running your CI Pipeline:
+6. You can integrate OpenSelery in your CI by copying the `openselery.yml` file into your `.github/actions/` destination project directory. Check and modify the setting before running your CI Pipeline:
 
   ```
   cat .github/actions/openselery.yml 
   ```
-1. Set the simulation parameter to `False` if you want pay developers or `True` to try out OpenSelery on your project.
+7. Set the simulation parameter to `False` if you want pay developers or `True` to try out OpenSelery on your project.
 
-1. Depending on the `openselery.yml` a payout will be triggered. The default setting runs OpenSelery with every new version of the destination project. 
+8. Depending on the `openselery.yml` a payout will be triggered. The default setting runs OpenSelery with every new version of the destination project. 
 
-1. Protect your master branch in the Github Setting under `Branches`. Activate the `Restrict who can push to matching branches` option. 
+9. Protect your master branch in the Github Setting under `Branches`. Activate the `Restrict who can push to matching branches` option. 
 
-1. To enable runner diagnostic logging, set the following secret in the repository that contains the workflow.
+10. To enable runner diagnostic logging, set the following secret in the repository that contains the workflow.
 This also changes the workflow behavior so that Github API calls are more stable:
 ```
 ACTIONS_RUNNER_DEBUG to true. 

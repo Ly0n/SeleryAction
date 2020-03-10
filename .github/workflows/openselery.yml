@@ -85,7 +85,7 @@ jobs:
           name: Logs_and_Billing
           path: ./results/
 
-#      - name: Check for payout receipt.txt
-#        run: | 
-#              cat ./results/receipt.txt 
-#              echo "Payout receipt found"
+      - name: Check for payout receipt.txt
+        run: | 
+              cat ./results/receipt.txt 
+              echo "Payout receipt found"

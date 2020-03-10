@@ -1,15 +1,15 @@
 # OpenSelery by Example
 [![Actions Status](https://github.com/protontypes/seleryexample/workflows/openselery/badge.svg)](https://github.com/protontypes/seleryexample/actions)
 
-A minimal project example showing openselery integration.     
+A minimal project example showing openselery:     
 
 * Software defined developers payout fully transparent to the bones for your Github project.
 * Dependencies scanning for most languages to inlcude all developers. 
 * Only the sender needs an Coinbase account in the first instance.
-* Investor or Developer creates a transparent payout with public CI logs.
+* Investor or developer creates a transparent payout with public CI logs.
   
 
-# Github Action Integration
+## Github Action Integration
 
 1. The [Gitub](https://github.com/settings/tokens) and [Libraries.io](https://libraries.io/api) tokens are easy to obtain. Simulate payouts without the [coinbase token](https://www.coinbase.com/settings/api) to find the right settings. 
 

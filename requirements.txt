@@ -205,7 +205,7 @@ prometheus-client==0.7.1
 promise==2.3
 prompt-toolkit==2.0.9
 protobuf==3.11.2
-psutil==5.6.3
+psutil==5.6.6
 ptyprocess==0.6.0
 pwquality==1.4.1
 pyarrow==0.14.1

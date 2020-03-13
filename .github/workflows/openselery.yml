@@ -82,7 +82,7 @@ jobs:
         # Upload the receipt file to github artifact.
       - uses: actions/upload-artifact@v1
         with:
-          name: Logs_and_Billing
+          name: selery_dump
           path: ./results/
 
       - name: Check for payout receipt.txt

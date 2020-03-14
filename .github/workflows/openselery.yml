@@ -39,7 +39,7 @@ jobs:
                 # simulation let you run without payout at the end  
                 simulation: False
                 # create inspection loggings
-                inspection: False
+                inspection: True
                 # include the target folders contributors
                 include_self: True
                 # include the dependencies of the target folder

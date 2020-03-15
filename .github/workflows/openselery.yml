@@ -85,7 +85,8 @@ jobs:
                 --env COINBASE_SECRET=${{ secrets.COINBASE_SECRET }}
                 --env INITIATE_PAYOUT=true
                 -v $PWD/:/home/selery/runningrepo/ 
-                -v $PWD/results:/home/selery/results/
+                -v $result_folder:/home/selery/results/
+                -v $config_folder:/home/selery/config 
                 openselery/openselery 
                 --directory=/home/selery/runningrepo/ --config=/home/selery/runningrepo/selery.yml  --results_dir=/home/selery/results/  --tooling=/home/selery/config/
         # Upload the receipt file to github artifact.

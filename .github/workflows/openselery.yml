@@ -93,9 +93,9 @@ jobs:
       - uses: actions/upload-artifact@v1
         with:
           name: selery_dump
-          path: ./results/
+          path: $result_folder
 
       - name: Check for payout receipt.txt
         run: | 
-              cat ./results/receipt.txt 
+              cat ${result_folder}/receipt.txt 
               echo "Payout receipt found"

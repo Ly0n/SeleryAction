@@ -15,17 +15,23 @@ on:
     branches: 
       - master   
 
+
 jobs:
   openselery:
     name: openselery
     runs-on: ubuntu-latest
+    env: 
+            result_folder: ~/.openselery/results/
+            config_folder: ~/.openselery/config/
     steps:
       # Check out the repo openselery is working on.
       - uses: actions/checkout@v1
       - name: Pull openselery from dockerhub
         run: docker pull openselery/openselery
-      - name: Create Result folder
-        run: mkdir ./results
+      - name: Create result and config folder
+        run:  |
+               mkdir -p $result_folder
+               mkdir -p $config_folder
       - name: Give everyone permission to write to this folder
         run: chmod a+rw ./results
       - name: Create openselery configuation
@@ -79,7 +85,7 @@ jobs:
                 -v $PWD/:/home/selery/runningrepo/ 
                 -v $PWD/results:/home/selery/results/
                 openselery/openselery 
-                --directory=/home/selery/runningrepo/ --config=/home/selery/runningrepo/selery.yml  --results_dir=/home/selery/results/ 
+                --directory=/home/selery/runningrepo/ --config=/home/selery/runningrepo/selery.yml  --results_dir=/home/selery/results/  --tooling=/home/selery/config/
         # Upload the receipt file to github artifact.
       - uses: actions/upload-artifact@v1
         with:

@@ -33,15 +33,15 @@ jobs:
                mkdir -p $result_folder
                mkdir -p $config_folder
       - name: Give everyone permission to write to this folder
-        run: chmod a+rw ./results
+        run: chmod a+rw $result_folder
       - name: Create openselery configuation
         run: |
               if [ ! -f ./selery.yml ]
               then
                 echo "No local config found. Create selery.yml"
-                touch ./selery.yml
-                chmod 700 ./selery.yml
-                cat > ./selery.yml <<EOF
+                touch $config_folder/selery.yml
+                chmod 700 $config_folder/selery.yml
+                cat > $config_folder/selery.yml <<EOF
                 # simulation let you run without payout at the end  
                 simulation: False
                 # create inspection loggings
@@ -69,10 +69,12 @@ jobs:
                 # weight set for all include contributors
                 uniform_weight: 1
               EOF
+              cat $config_folder/selery.yml
               else 
                 echo "Use existing local selery.yml"
+                cat ./selery.yml
               fi
-              cat ./selery.yml
+              
       # Run Openselery on the current folder.
       - name: Run openselery on sources
         run:  > 

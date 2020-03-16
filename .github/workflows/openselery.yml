@@ -92,7 +92,7 @@ jobs:
               else 
                   echo "Use existing local selery.yml"
                   cat ${config_folder}/tooling_repos.yml  
-                
+              fi 
       # Run Openselery on the current folder.
       - name: Run openselery on sources
         run:  > 

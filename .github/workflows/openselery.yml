@@ -74,7 +74,25 @@ jobs:
                 echo "Use existing local selery.yml"
                 cat ./selery.yml
               fi
-              
+      - name: Add additional tooling list
+        run: |
+              if [ ! -f ${config_folder}/tooling_repos.yml ]
+              then
+                echo "No local config found. Create selery.yml"
+                touch ${config_folder}/tooling_repos.yml
+                chmod 700 ${config_folder}/tooling_repos.yml
+                cat > ${config_folder}/tooling_repos.yml <<EOF
+                github:
+                #    - https://github.com/protontypes/openselery
+                #    - https://github.com/torvalds/linux
+                #    - https://github.com/python/cpython
+                - https://github.com/docker/docker-ce
+              EOF
+              cat ${config_folder}/tooling_repos.yml 
+              else 
+                  echo "Use existing local selery.yml"
+                  cat ${config_folder}/tooling_repos.yml  
+                
       # Run Openselery on the current folder.
       - name: Run openselery on sources
         run:  > 
@@ -86,9 +104,9 @@ jobs:
                 --env INITIATE_PAYOUT=true
                 -v $PWD/:/home/selery/runningrepo/ 
                 -v $(realpath $result_folder):/home/selery/results/
-                -v $(realpath $config_folder):/home/selery/config 
+                -v $(realpath $config_folder):/home/selery/config/ 
                 openselery/openselery 
-                --directory=/home/selery/runningrepo/ --config=/home/selery/config/selery.yml  --results_dir=/home/selery/results/  --tooling=/home/selery/config/
+                --directory=/home/selery/runningrepo/ --config=/home/selery/config/selery.yml  --results_dir=/home/selery/results/  --tooling=/home/selery/config/tooling_repos.yml
         # Upload the receipt file to github artifact.
       - uses: actions/upload-artifact@v1
         with:

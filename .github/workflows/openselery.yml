@@ -55,7 +55,7 @@ jobs:
                 # minimum contributions made to be considered
                 min_contributions: 1
                 # check the public address from FUNDING.yml vs the secret coinbase address
-                check_equal_privat_and_public_address: False
+                check_equal_privat_and_public_address: True
                 # Skip email sended by coinbase
                 skip_email: False
                 # the amount of eth send per user

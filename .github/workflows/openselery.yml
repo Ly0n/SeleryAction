@@ -21,22 +21,22 @@ jobs:
     name: openselery
     runs-on: ubuntu-latest
     env: 
-            result_folder: ~/.openselery/results/
+            results_folder: ~/.openselery/results/
             config_folder: ~/.openselery/config/
     steps:
       # Check out the repo openselery is working on.
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v1 
       - name: Pull openselery from dockerhub
         run: docker pull openselery/openselery
       - name: Create result and config folder
         run:  |
-               mkdir -p $result_folder
+               mkdir -p $results_folder
                mkdir -p $config_folder
       - name: Give everyone permission to write to this folder
         run: chmod a+rw $result_folder
       - name: Create openselery configuation
         run: |
-              if [ ! -f ./selery.yml ]
+              if [ ! -f ${GITHUB_WORKSPACE/selery.yml} ]
               then
                 echo "No local config found. Create selery.yml"
                 touch $config_folder/selery.yml
@@ -63,16 +63,16 @@ jobs:
                 # numbers of contributors payout per run
                 contributor_payout_count: 1
                 # the total amount of payout per run
-                total_payout_per_run: 0.000002
+                total_payout_per_run: 0.00021
                 # message send with every coinbase email. Never send an URL.
-                email_note: "Fresh OpenCelery Funding"
+                email_note: "Fresh OpenSelery funding. Search for OpenSelery to get more information"
                 # weight set for all include contributors
                 uniform_weight: 1
               EOF
               cat $config_folder/selery.yml
               else 
-                echo "Use existing local selery.yml"
-                cat ./selery.yml
+                echo "Use existing local selery.yml from directory: ${GITHUB_WORKSPACE}"
+                cat ${GITHUB_WORKSPACE/selery.yml}
               fi
       - name: Add additional tooling list
         run: |
@@ -111,9 +111,9 @@ jobs:
       - uses: actions/upload-artifact@v1
         with:
           name: selery_dump
-          path: $result_folder
+          path: $results_folder
 
       - name: Check for payout receipt.txt
         run: | 
-              cat ${result_folder}/receipt.txt 
+              cat ${results_folder}/receipt.txt 
               echo "Payout receipt found"

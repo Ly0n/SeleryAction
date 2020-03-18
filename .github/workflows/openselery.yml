@@ -33,7 +33,7 @@ jobs:
                mkdir -p $results_folder
                mkdir -p $config_folder
       - name: Give everyone permission to write to this folder
-        run: chmod a+rw $result_folder
+        run: chmod a+rw $results_folder
       - name: Create openselery configuation
         run: |
               if [ ! -f ${GITHUB_WORKSPACE/selery.yml} ]
@@ -103,7 +103,7 @@ jobs:
                 --env COINBASE_SECRET=${{ secrets.COINBASE_SECRET }}
                 --env INITIATE_PAYOUT=true
                 -v $PWD/:/home/selery/runningrepo/ 
-                -v $(realpath $result_folder):/home/selery/results/
+                -v $(realpath $results_folder):/home/selery/results/
                 -v $(realpath $config_folder):/home/selery/config/ 
                 openselery/openselery 
                 --directory=/home/selery/runningrepo/ --config=/home/selery/config/selery.yml  --results_dir=/home/selery/results/  --tooling=/home/selery/config/tooling_repos.yml

@@ -109,14 +109,15 @@ jobs:
         with:
           name: selery_dump
           path: ~/.openselery/results/
+ 
+      - name: Checkout Wiki Repo
+        uses: actions/checkout@v2
+        with:
+            repository: ${GITHUB_REPOSITORY}.wiki.git
+            path: wiki
 
       - name: Check for payout receipt.txt
         run: | 
               cat ${results_folder}/receipt.txt 
               echo "Payout receipt found"
               
-      - name: Checkout Wiki Repo
-        uses: actions/checkout@v2
-        with:
-            repository: ${GITHUB_REPOSITORY}.wiki.git
-            path: wiki

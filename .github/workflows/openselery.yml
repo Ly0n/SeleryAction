@@ -113,7 +113,7 @@ jobs:
       - name: Checkout Wiki Repo
         uses: actions/checkout@v2
         with:
-            repository: ${GITHUB_REPOSITORY}.wiki.git
+            repository: protontypes/seleryexample.wiki.git
             path: wiki
 
       - name: Check for payout receipt.txt

@@ -32,9 +32,8 @@ jobs:
               
       - name: Create result and config folder
         run:  |
-               echo "Creating Folder $results_folder and $config_folder"  
-               mkdir -p $results_folder
-               mkdir -p $config_folder
+               mkdir -vp $results_folder
+               mkdir -vp $config_folder
       - name: Give everyone permission to write to this folder
         run: chmod a+rw $results_folder $config_folder
       - name: Create openselery configuation
@@ -42,8 +41,8 @@ jobs:
               if [ ! -f ${GITHUB_WORKSPACE/selery.yml} ]
               then
                 echo "No local config found. Create selery.yml"
-                touch .$config_folder/selery.yml
-                chmod 700 .$config_folder/selery.yml
+                touch $config_folder/selery.yml
+                chmod 700 $config_folder/selery.yml
                 cat > .$config_folder/selery.yml <<EOF
                 # simulation let you run without payout at the end  
                 simulation: False

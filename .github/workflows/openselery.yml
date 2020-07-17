@@ -81,10 +81,10 @@ jobs:
                 chmod 700 ${config_folder}/tooling_repos.yml
                 cat > ${config_folder}/tooling_repos.yml <<EOF
                 github:
-                #    - https://github.com/protontypes/openselery
+                - https://github.com/protontypes/openselery
                 #    - https://github.com/torvalds/linux
                 #    - https://github.com/python/cpython
-                - https://github.com/docker/docker-ce
+                #    - https://github.com/docker/docker-ce
               EOF
               cat ${config_folder}/tooling_repos.yml 
               else 

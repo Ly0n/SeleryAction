@@ -25,12 +25,16 @@ jobs:
       - uses: actions/checkout@v1 
       - name: Pull openselery from dockerhub
         run: docker pull protontypes/openselery
+      - name: Set env variables 
+        run:  |
+              echo ::set-env results_folder=${HOME}/results_folder
+              echo ::set-env results_folder=${HOME}/results_folder
+              
       - name: Create result and config folder
         run:  |
-               echo ::set-env results_folder=${HOME}/results_folder
                echo $results_folder
-               mkdir -p .$results_folder
-               mkdir -p .$config_folder
+               mkdir -p $results_folder
+               mkdir -p $config_folder
       - name: Give everyone permission to write to this folder
         run: chmod a+rw .$results_folder
       - name: Create openselery configuation

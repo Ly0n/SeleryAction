@@ -28,11 +28,10 @@ jobs:
       - name: Set env variables 
         run:  |
               echo ::set-env results_folder=${HOME}/results_folder
-              echo ::set-env results_folder=${HOME}/results_folder
+              echo ::set-env config_folder=${HOME}/config_folder
               
       - name: Create result and config folder
         run:  |
-               echo $results_folder
                mkdir -p $results_folder
                mkdir -p $config_folder
       - name: Give everyone permission to write to this folder

@@ -120,7 +120,7 @@ jobs:
             
       - name: Add Badge yaml
         run: |
-         cd $GITHUB_WORKSPACE
+         cd $GITHUB_WORKSPACE/wiki
          mkdir -p openselery       
          cp ${results_folder}/balance_badge.json ./openselery/
          git config user.name github-actions

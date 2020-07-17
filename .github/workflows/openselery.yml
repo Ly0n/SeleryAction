@@ -69,7 +69,7 @@ jobs:
                 # weight set for all include contributors
                 uniform_weight: 1
               EOF
-              cat .$config_folder/selery.yml
+              cat $config_folder/selery.yml
               else 
                 echo "Use existing local selery.yml from directory: ${GITHUB_WORKSPACE}"
                 cat ${GITHUB_WORKSPACE/selery.yml}
@@ -91,7 +91,7 @@ jobs:
               cat ${config_folder}/tooling_repos.yml 
               else 
                   echo "Use existing local selery.yml"
-                  cat .${config_folder}/tooling_repos.yml  
+                  cat ${config_folder}/tooling_repos.yml  
               fi 
       # Run Openselery on the current folder.
       - name: Run openselery on sources

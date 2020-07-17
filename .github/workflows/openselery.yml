@@ -116,7 +116,6 @@ jobs:
         uses: actions/checkout@v2
         with:
             repository: protontypes/seleryexample.wiki
-            path: wiki
             
       - name: Add Badge yaml
         run: |

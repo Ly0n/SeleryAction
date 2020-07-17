@@ -32,10 +32,11 @@ jobs:
               
       - name: Create result and config folder
         run:  |
+               echo "Creating Folder $results_folder and $config_folder"  
                mkdir -p $results_folder
                mkdir -p $config_folder
       - name: Give everyone permission to write to this folder
-        run: chmod a+rw .$results_folder
+        run: chmod a+rw $results_folder
       - name: Create openselery configuation
         run: |
               if [ ! -f ${GITHUB_WORKSPACE/selery.yml} ]
@@ -76,19 +77,19 @@ jobs:
               fi
       - name: Add additional tooling list
         run: |
-              if [ ! -f .${config_folder}/tooling_repos.yml ]
+              if [ ! -f ${config_folder}/tooling_repos.yml ]
               then
                 echo "No local config found. Create selery.yml"
-                touch .${config_folder}/tooling_repos.yml
-                chmod 700 .${config_folder}/tooling_repos.yml
-                cat > .${config_folder}/tooling_repos.yml <<EOF
+                touch ${config_folder}/tooling_repos.yml
+                chmod 700 ${config_folder}/tooling_repos.yml
+                cat > ${config_folder}/tooling_repos.yml <<EOF
                 github:
                 - https://github.com/protontypes/openselery
                 #    - https://github.com/torvalds/linux
                 #    - https://github.com/python/cpython
                 #    - https://github.com/docker/docker-ce
               EOF
-              cat .${config_folder}/tooling_repos.yml 
+              cat ${config_folder}/tooling_repos.yml 
               else 
                   echo "Use existing local selery.yml"
                   cat .${config_folder}/tooling_repos.yml  
@@ -102,8 +103,8 @@ jobs:
                 --env COINBASE_TOKEN=${{ secrets.COINBASE_TOKEN }}
                 --env COINBASE_SECRET=${{ secrets.COINBASE_SECRET }}
                 -v $PWD/:/home/selery/runningrepo/ 
-                -v $(realpath .$results_folder):/home/selery/results/
-                -v $(realpath .$config_folder):/home/selery/config/ 
+                -v $results_folder:/home/selery/results/
+                -v $config_folder:/home/selery/config/ 
                 protontypes/openselery 
                 --directory=/home/selery/runningrepo/ --config=/home/selery/config/selery.yml  --results_dir=/home/selery/results/  --tooling=/home/selery/config/tooling_repos.yml
         # Upload the receipt file to github artifact.
@@ -122,7 +123,7 @@ jobs:
         run: |
          cd wiki
          mkdir -p openselery       
-         cp .${results_folder}/balance_badge.json ./openselery/
+         cp ${results_folder}/balance_badge.json ./openselery/
          git config user.name github-actions
          git config user.email github-actions@github.com
          git add . -A
@@ -136,6 +137,6 @@ jobs:
 
       - name: Check for payout receipt.txt
         run: | 
-              cat .${results_folder}/receipt.txt 
+              cat ${results_folder}/receipt.txt 
               echo "Payout receipt found"
               

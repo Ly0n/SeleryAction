@@ -25,7 +25,7 @@ jobs:
       - uses: actions/checkout@v1 
       - name: Pull openselery from dockerhub
         run: docker pull protontypes/openselery
-      - name: Set env variables 
+      - name: Set env variables for all following jobs
         run:  |
               echo "::set-env name=results_folder::${HOME}/results_folder"
               echo "::set-env name=config_folder::${HOME}/config_folder"

@@ -100,8 +100,8 @@ jobs:
                 --env COINBASE_TOKEN=${{ secrets.COINBASE_TOKEN }}
                 --env COINBASE_SECRET=${{ secrets.COINBASE_SECRET }}
                 -v $PWD/:/home/selery/runningrepo/ 
-                -v .$results_folder:/home/selery/results/
-                -v .$config_folder:/home/selery/config/ 
+                -v $(realpath .$results_folder):/home/selery/results/
+                -v $(realpath .$config_folder):/home/selery/config/ 
                 protontypes/openselery 
                 --directory=/home/selery/runningrepo/ --config=/home/selery/config/selery.yml  --results_dir=/home/selery/results/  --tooling=/home/selery/config/tooling_repos.yml
         # Upload the receipt file to github artifact.

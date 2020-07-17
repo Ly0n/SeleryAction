@@ -112,10 +112,15 @@ jobs:
           name: selery_dump
           path: /home/runner/results_folder
  
+      - name: Set env variables to new Github Workspace
+        run:  |
+              echo "::set-env name=GITHUB_WORKSPACE::/home/runner/work/seleryexample/"
+ 
       - name: Checkout Wiki Repo
         uses: actions/checkout@v2
         with:
-            repository: protontypes/seleryexample.wiki
+            repository: protontypes/seleryexample
+            path: wiki
             
       - name: Add Badge yaml
         run: |

@@ -140,6 +140,7 @@ jobs:
         with:
          github_token: ${{ secrets.PAT_LYON }}
          repository: protontypes/seleryexample.wiki
+         directory: wiki
         
 
       - name: Check for payout receipt.txt

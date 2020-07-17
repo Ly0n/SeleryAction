@@ -27,8 +27,8 @@ jobs:
         run: docker pull protontypes/openselery
       - name: Set env variables 
         run:  |
-              echo ::set-env results_folder=${HOME}/results_folder
-              echo ::set-env config_folder=${HOME}/config_folder
+              echo "::set-env name={results_folder}::${HOME}/results_folder"
+              echo "::set-env name={config_folder}::${HOME}/config_folder"
               
       - name: Create result and config folder
         run:  |

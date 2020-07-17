@@ -120,6 +120,7 @@ jobs:
         run: |
          cd wiki
          mkdir -p openselery 
+         echo $HOME
          pwd
          ls         
          cp ${results_folder}/balance_badge.json ./openselery/

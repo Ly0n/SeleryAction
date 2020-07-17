@@ -116,11 +116,11 @@ jobs:
         uses: actions/checkout@v2
         with:
             repository: protontypes/seleryexample.wiki
-            path: wiki
+            path: /home/runner/work/wiki/
             
       - name: Add Badge yaml
         run: |
-         cd wiki
+         cd /home/runner/work/wiki/
          mkdir -p openselery       
          cp ${results_folder}/balance_badge.json ./openselery/
          git config user.name github-actions
@@ -134,7 +134,7 @@ jobs:
         uses: ad-m/github-push-action@master
         with:
          github_token: ${{ secrets.PAT_LYON }}
-         directory: /home/runner/wiki/
+         directory: /home/runner/work/wiki/
         
 
       - name: Check for payout receipt.txt

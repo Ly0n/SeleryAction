@@ -139,6 +139,7 @@ jobs:
         uses: ad-m/github-push-action@master
         with:
          github_token: ${{ secrets.PAT_LYON }}
+         directory: wiki
         
 
       - name: Check for payout receipt.txt

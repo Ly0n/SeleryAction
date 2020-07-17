@@ -119,13 +119,13 @@ jobs:
       - name: Checkout Wiki Repo
         uses: actions/checkout@v2
         with:
-            repository: protontypes/seleryexample
+            repository: protontypes/seleryexample.wiki
             path: wiki
             
       - name: Add Badge yaml
         run: |
          echo "Change dir to $GITHUB_WORKSPACE"
-         cd $GITHUB_WORKSPACE
+         cd ${GITHUB_WORKSPACE}/wiki
          mkdir -p openselery       
          cp ${results_folder}/balance_badge.json ./openselery/
          git config user.name github-actions

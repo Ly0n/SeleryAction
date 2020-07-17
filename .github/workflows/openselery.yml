@@ -115,7 +115,7 @@ jobs:
         with:
             repository: protontypes/seleryexample.wiki
             path: wiki
-            token: ${{ secrets.GitHub_PAT }} # `GitHub_PAT` is a secret that contains your PAT
+            token: ${{ secrets.PAT_LYON }}
       - name: Upload transaction data to wiki
         run: |
             mkdir openselery     

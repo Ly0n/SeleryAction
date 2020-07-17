@@ -43,7 +43,7 @@ jobs:
                 echo "No local config found. Create selery.yml"
                 touch $config_folder/selery.yml
                 chmod 700 $config_folder/selery.yml
-                cat > .$config_folder/selery.yml <<EOF
+                cat > $config_folder/selery.yml <<EOF
                 # simulation let you run without payout at the end  
                 simulation: False
                 # include the target folders contributors

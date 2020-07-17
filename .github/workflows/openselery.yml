@@ -33,15 +33,15 @@ jobs:
                mkdir -p .$results_folder
                mkdir -p .$config_folder
       - name: Give everyone permission to write to this folder
-        run: chmod a+rw $results_folder
+        run: chmod a+rw .$results_folder
       - name: Create openselery configuation
         run: |
               if [ ! -f ${GITHUB_WORKSPACE/selery.yml} ]
               then
                 echo "No local config found. Create selery.yml"
-                touch $config_folder/selery.yml
-                chmod 700 $config_folder/selery.yml
-                cat > $config_folder/selery.yml <<EOF
+                touch .$config_folder/selery.yml
+                chmod 700 .$config_folder/selery.yml
+                cat > .$config_folder/selery.yml <<EOF
                 # simulation let you run without payout at the end  
                 simulation: False
                 # include the target folders contributors
@@ -67,29 +67,29 @@ jobs:
                 # weight set for all include contributors
                 uniform_weight: 1
               EOF
-              cat $config_folder/selery.yml
+              cat .$config_folder/selery.yml
               else 
                 echo "Use existing local selery.yml from directory: ${GITHUB_WORKSPACE}"
                 cat ${GITHUB_WORKSPACE/selery.yml}
               fi
       - name: Add additional tooling list
         run: |
-              if [ ! -f ${config_folder}/tooling_repos.yml ]
+              if [ ! -f .${config_folder}/tooling_repos.yml ]
               then
                 echo "No local config found. Create selery.yml"
-                touch ${config_folder}/tooling_repos.yml
-                chmod 700 ${config_folder}/tooling_repos.yml
-                cat > ${config_folder}/tooling_repos.yml <<EOF
+                touch .${config_folder}/tooling_repos.yml
+                chmod 700 .${config_folder}/tooling_repos.yml
+                cat > .${config_folder}/tooling_repos.yml <<EOF
                 github:
                 - https://github.com/protontypes/openselery
                 #    - https://github.com/torvalds/linux
                 #    - https://github.com/python/cpython
                 #    - https://github.com/docker/docker-ce
               EOF
-              cat ${config_folder}/tooling_repos.yml 
+              cat .${config_folder}/tooling_repos.yml 
               else 
                   echo "Use existing local selery.yml"
-                  cat ${config_folder}/tooling_repos.yml  
+                  cat .${config_folder}/tooling_repos.yml  
               fi 
       # Run Openselery on the current folder.
       - name: Run openselery on sources
@@ -100,8 +100,8 @@ jobs:
                 --env COINBASE_TOKEN=${{ secrets.COINBASE_TOKEN }}
                 --env COINBASE_SECRET=${{ secrets.COINBASE_SECRET }}
                 -v $PWD/:/home/selery/runningrepo/ 
-                -v $results_folder:/home/selery/results/
-                -v $config_folder:/home/selery/config/ 
+                -v .$results_folder:/home/selery/results/
+                -v .$config_folder:/home/selery/config/ 
                 protontypes/openselery 
                 --directory=/home/selery/runningrepo/ --config=/home/selery/config/selery.yml  --results_dir=/home/selery/results/  --tooling=/home/selery/config/tooling_repos.yml
         # Upload the receipt file to github artifact.
@@ -120,7 +120,7 @@ jobs:
         run: |
          cd wiki
          mkdir -p openselery       
-         cp ${results_folder}/balance_badge.json ./openselery/
+         cp .${results_folder}/balance_badge.json ./openselery/
          git config user.name github-actions
          git config user.email github-actions@github.com
          git add . -A
@@ -134,6 +134,6 @@ jobs:
 
       - name: Check for payout receipt.txt
         run: | 
-              cat ${results_folder}/receipt.txt 
+              cat .${results_folder}/receipt.txt 
               echo "Payout receipt found"
               

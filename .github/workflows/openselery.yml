@@ -115,11 +115,14 @@ jobs:
         with:
             repository: protontypes/seleryexample.wiki
             path: wiki
-      - run: |
-            cp ${results_folder}/balance_badge.json . 
+            token: ${{ secrets.GitHub_PAT }} # `GitHub_PAT` is a secret that contains your PAT
+      - name: Upload transaction data to wiki
+        run: |
+            mkdir openselery     
+            cp ${results_folder}/balance_badge.json ./openselery 
             git config user.name github-actions
             git config user.email github-actions@github.com
-            git add balance_badge.json
+            git add ./openselery/balance_badge.json
             git commit -m "generated"
             git push 
 

@@ -115,7 +115,7 @@ jobs:
       - name: Checkout Wiki Repo
         uses: actions/checkout@v2
         with:
-            repository: protontypes/seleryexample.wiki
+            repository: protontypes/seleryexample.git
             
       - name: Add Badge yaml
         run: |

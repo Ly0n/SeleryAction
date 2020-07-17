@@ -119,6 +119,7 @@ jobs:
             
       - name: Add Badge yaml
         run: |
+         echo "Change dir to $GITHUB_WORKSPACE"
          cd $GITHUB_WORKSPACE
          mkdir -p openselery       
          cp ${results_folder}/balance_badge.json ./openselery/

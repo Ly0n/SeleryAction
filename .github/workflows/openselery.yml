@@ -110,7 +110,7 @@ jobs:
       - uses: actions/upload-artifact@v1
         with:
           name: selery_dump
-          path: /results/
+          path: /home/runner/results_folder
  
       - name: Checkout Wiki Repo
         uses: actions/checkout@v2

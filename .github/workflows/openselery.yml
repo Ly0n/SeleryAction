@@ -25,10 +25,9 @@ jobs:
       - uses: actions/checkout@v1 
       - name: print Repository_name and folder
         run: |
-              ls
-              pwd
-              echo ${HOME}/${GITHUB_REPOSITORY}
-              ls ${HOME}/${GITHUB_REPOSITORY}
+              echo ${HOME}/work/${GITHUB_REPOSITORY}
+              ls ${HOME}/work/${GITHUB_REPOSITORY}
+              echo "::set-env name=TARGET_PROJECT::${HOME}/work/${GITHUB_REPOSITORY}"
         
       - name: Pull openselery from dockerhub
         run: docker pull protontypes/openselery
@@ -45,7 +44,7 @@ jobs:
         run: chmod a+rw $results_folder $config_folder
       - name: Create openselery configuation
         run: |
-              if [ ! -f ${GITHUB_WORKSPACE/selery.yml} ]
+              if [ ! -f ${TARGET_PROJECT}/selery.yml ]
               then
                 echo "No local config found. Create selery.yml"
                 touch $config_folder/selery.yml
@@ -78,8 +77,8 @@ jobs:
               EOF
               cat $config_folder/selery.yml
               else 
-                echo "Use existing local selery.yml from directory: ${GITHUB_WORKSPACE}"
-                cat ${GITHUB_WORKSPACE/selery.yml}
+                echo "Use existing local selery.yml from directory: ${TARGET_PROJECT}"
+                cat ${TARGET_PROJECT}/selery.yml
               fi
       - name: Add additional tooling list
         run: |

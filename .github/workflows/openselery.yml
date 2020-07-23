@@ -23,13 +23,10 @@ jobs:
     steps:
       # Check out the repo openselery is working on.
       - uses: actions/checkout@v1 
-      - name: run Sellery on Sources
-        run: |
-              echo ::set-env name=REPOSITORY_NAME::$(echo "$GITHUB_REPOSITORY" | awk -F / '{print $2}' | sed -e "s/:refs//")
       - name: print Repository_name and folder
         run: |
-              echo ${GITHUB_REPOSITORY}/${REPOSITORY_NAME}
-              ls ${GITHUB_REPOSITORY}/${REPOSITORY_NAME}
+              echo ${HOME}/${GITHUB_REPOSITORY}
+              ls ${HOME}/${GITHUB_REPOSITORY}
         
       - name: Pull openselery from dockerhub
         run: docker pull protontypes/openselery

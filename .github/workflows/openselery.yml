@@ -80,6 +80,7 @@ jobs:
               else 
                 echo "Use existing local selery.yml from directory: ${TARGET_PROJECT}"
                 cat ${TARGET_PROJECT}/selery.yml
+                cp ${TARGET_PROJECT}/selery.yml $config_folder/selery.yml
               fi
       - name: Add additional tooling list
         run: |

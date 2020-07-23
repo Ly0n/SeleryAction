@@ -25,6 +25,7 @@ jobs:
       - uses: actions/checkout@v1 
       - name: print Repository_name and folder
         run: |
+              pwd
               echo ${HOME}/work/${GITHUB_REPOSITORY}
               ls ${HOME}/work/${GITHUB_REPOSITORY}
               echo "::set-env name=TARGET_PROJECT::${HOME}/work/${GITHUB_REPOSITORY}"

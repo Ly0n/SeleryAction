@@ -25,6 +25,7 @@ jobs:
       - uses: actions/checkout@v1 
       - name: print Repository_name and folder
         run: |
+              ls
               echo ${HOME}/${GITHUB_REPOSITORY}
               ls ${HOME}/${GITHUB_REPOSITORY}
         

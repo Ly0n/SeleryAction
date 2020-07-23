@@ -29,6 +29,8 @@ jobs:
               echo ${HOME}/work/${REPOSITORY_NAME}/${REPOSITORY_NAME}
               ls ${HOME}/work/${REPOSITORY_NAME}/${REPOSITORY_NAME}
               echo "::set-env name=TARGET_PROJECT::${HOME}/work/${REPOSITORY_NAME}/${REPOSITORY_NAME}"
+              echo "::set-env name=GITHUB_REPOSITORY_NEW::$GITHUB_REPOSITORY"
+
         
       - name: Pull openselery from dockerhub
         run: docker pull protontypes/openselery
@@ -129,20 +131,16 @@ jobs:
               cat ${results_folder}/receipt.txt 
               echo "Payout receipt found"
  
-      - name: Set env variables to new Github Workspace
-        run:  |
-              echo "::set-env name=GITHUB_WORKSPACE::/home/runner/work/seleryexample/"
- 
       - name: Checkout Wiki Repo
         uses: actions/checkout@v2
         with:
-            repository: protontypes/seleryexample.wiki
+            repository: ${{ env.GITHUB_REPOSITORY_NEW }}.wiki
             path: wiki
             
       - name: Add Badge yaml
         run: |
-         echo "Change dir to $GITHUB_WORKSPACE"
-         cd ${GITHUB_WORKSPACE}/wiki
+         echo "Change dir to ${HOME}/work"
+         cd ./wiki
          mkdir -p openselery       
          cp ${results_folder}/balance_badge.json ./openselery/
          git config user.name github-actions
@@ -156,7 +154,7 @@ jobs:
         uses: ad-m/github-push-action@master
         with:
          github_token: ${{ secrets.PAT_LYON }}
-         repository: protontypes/seleryexample.wiki
+         repository: ${{ env.GITHUB_REPOSITORY_NEW }}.wiki
          directory: wiki
         
 

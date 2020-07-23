@@ -25,7 +25,7 @@ jobs:
       - uses: actions/checkout@v1 
       - name: print Repository_name and folder
         run: |
-              run: echo ::set-env name=REPOSITORY_NAME::$(echo "$GITHUB_REPOSITORY" | awk -F / '{print $2}' | sed -e "s/:refs//")
+              REPOSITORY_NAME=$(echo "$GITHUB_REPOSITORY" | awk -F / '{print $2}' | sed -e "s/:refs//")
               echo ${HOME}/work/${REPOSITORY_NAME}/${REPOSITORY_NAME}
               ls ${HOME}/work/${REPOSITORY_NAME}/${REPOSITORY_NAME}
               echo "::set-env name=TARGET_PROJECT::${HOME}/work/${REPOSITORY_NAME}/${REPOSITORY_NAME}"

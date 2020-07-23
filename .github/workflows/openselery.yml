@@ -26,6 +26,7 @@ jobs:
       - name: print Repository_name and folder
         run: |
               ls
+              pwd
               echo ${HOME}/${GITHUB_REPOSITORY}
               ls ${HOME}/${GITHUB_REPOSITORY}
         

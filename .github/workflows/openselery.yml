@@ -32,6 +32,10 @@ jobs:
         
       - name: Pull openselery from dockerhub
         run: docker pull protontypes/openselery
+
+      #- name: Build openselery from repo dockerfile
+      #  run: docker build -t openselery .
+
       - name: Set env variables for all following jobs
         run:  |
               echo "::set-env name=results_folder::${HOME}/results_folder"
@@ -119,6 +123,11 @@ jobs:
         with:
           name: selery_dump
           path: /home/runner/results_folder
+
+      - name: Check for payout receipt.txt
+        run: | 
+              cat ${results_folder}/receipt.txt 
+              echo "Payout receipt found"
  
       - name: Set env variables to new Github Workspace
         run:  |
@@ -151,8 +160,3 @@ jobs:
          directory: wiki
         
 
-      - name: Check for payout receipt.txt
-        run: | 
-              cat ${results_folder}/receipt.txt 
-              echo "Payout receipt found"
-              

@@ -1,0 +1,38 @@
+# debug states
+## simulation let you run without payout at the end
+simulation: True
+
+# take into consideration
+## include the target folders contributors
+include_self: True
+## include the dependencies of the target folder
+include_dependencies: False 
+## include the tooling and runtime from file
+include_tooling_and_runtime: False 
+## minimum contributions made to be considered
+min_contributions: 1
+
+# weight configuations
+## base weight for all included contributors
+uniform_weight: 30
+# use release tags to increased the weight of the last release contributors
+consider_releases: False 
+## last releases additionaly weighted.
+releases_included: 3
+## release weights
+release_weight: 70
+
+# payout configurations
+bitcoin_address: "3PVdiyLPR7MgaeFRJLW9mfuESZS2aAPX9w"
+## check the public address from FUNDING.yml vs the secret coinbase address
+check_equal_privat_and_public_address: True
+## Skip email sended by coinbase
+skip_email: False
+## the amount of eth send per user
+btc_per_transaction: 0.000022
+## numbers of contributors payout per run
+number_payout_contributors_per_run: 2
+## the maximum amount of payout per run
+max_payout_per_run: 0.000044
+## message send with every coinbase email. Never send an URL.
+email_note: "Fresh OpenSelery Funding"

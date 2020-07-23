@@ -26,8 +26,11 @@ jobs:
       - name: run Sellery on Sources
         run: |
               echo ::set-env name=REPOSITORY_NAME::$(echo "$GITHUB_REPOSITORY" | awk -F / '{print $2}' | sed -e "s/:refs//")
-      - name: print Repository_name
-        run: echo $REPOISTORY_NAME
+      - name: print Repository_name and folder
+        run: |
+              echo $REPOSITORY_NAME
+              ls $REPOSITORY_NAME
+        
       - name: Pull openselery from dockerhub
         run: docker pull protontypes/openselery
       - name: Set env variables for all following jobs

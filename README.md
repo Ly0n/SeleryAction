@@ -1,13 +1,16 @@
 # OpenSelery by Example
 [![Actions Status](https://github.com/protontypes/seleryexample/workflows/openselery/badge.svg)](https://github.com/protontypes/seleryexample/actions) ![Balance](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/wiki/protontypes/seleryexample/openselery/balance_badge.json&style=flat&logo=bitcoin)                      
 [![Donate with bitcoin](https://en.cryptobadges.io/badge/small/3PVdiyLPR7MgaeFRJLW9mfuESZS2aAPX9w)](https://en.cryptobadges.io/donate/3PVdiyLPR7MgaeFRJLW9mfuESZS2aAPX9w)   
+![Gitter](https://img.shields.io/gitter/room/protontypes/openselery)
+[![stability-experimental](https://img.shields.io/badge/stability-experimental-orange.svg)](https://github.com/emersion/stability-badges#experimental)
+
 
 A minimal project example showing openselery:     
 
 * Software defined developers payout fully transparent to the bones for your Github project.
 * Dependencies scanning for most languages to include all developers. 
 * Only the sender needs an Coinbase account in the first instance.
-* Investor creates a transparent payout with public CI logs.
+* Investor creates a transparent payout in your Project CI logs and Artfacts.
   
 
 ## Github Action Integration
@@ -20,7 +23,7 @@ A minimal project example showing openselery:
 
 4. Transfer some money to this wallet for testing. See the [price list](https://help.coinbase.com/en/coinbase/trading-and-funding/pricing-and-fees/fees.html) for transfering money to the coinbase account.
  
-5. Add the token of libraries.io and coinbase to your [secrets](https://help.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets).
+5. Add the token of libraries.io and coinbase to your [secrets](https://help.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets). You run in simulation mode without the coinbase token.
 
 6. You can integrate OpenSelery in your CI by copying the `openselery.yml` file into your `.github/actions/` destination project directory. Check and modify the setting before running your CI Pipeline:
 

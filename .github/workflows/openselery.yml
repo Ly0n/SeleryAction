@@ -67,6 +67,8 @@ jobs:
                 include_tooling_and_runtime: True
                 # minimum contributions made to be considered
                 min_contributions: 1
+                # payout configurations
+                bitcoin_address: "3PVdiyLPR7MgaeFRJLW9mfuESZS2aAPX9w"
                 # check that the public bitcoin address matches the secret coinbase address
                 check_equal_private_and_public_address: True
                 # Skip email sended by coinbase

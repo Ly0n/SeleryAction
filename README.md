@@ -7,7 +7,7 @@
 [![Donate with bitcoin](https://en.cryptobadges.io/badge/small/3PVdiyLPR7MgaeFRJLW9mfuESZS2aAPX9w)](https://en.cryptobadges.io/donate/3PVdiyLPR7MgaeFRJLW9mfuESZS2aAPX9w)  
 
 
-A minimal project example showing openselery:     
+A project template that is showing on how to integrated Bitcoin payouts into Github Action Workflows:     
 
 * Software defined developers payout fully transparent to the bones for your Github project.
 * Dependencies scanning for most languages to include all developers. 

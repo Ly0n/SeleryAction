@@ -12,9 +12,14 @@ name: openselery
         
 on:
   push:
-    branches: 
-      - master   
-
+    branches-ignore:
+      - master
+    pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - closed
 
 jobs:
   openselery:

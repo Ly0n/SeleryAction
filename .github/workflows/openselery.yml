@@ -1,23 +1,9 @@
-# ./.github/workflows/openselery
-# Use Openselery as a simple Github action on your project workflow.
-# For configuration create an .openselery.yml file in your project repo.
 name: openselery
-
-#on:
-#  release:
-#    types: [created]
-#    # Sequence of patterns matched against refs/tags
-#    tags:
-#     - v*  # Event to all release tags
         
 on:
-   push:                
-   pull_request:
-    types:
-      - opened
-      - reopened
-      - synchronize
-      - closed
+  push:
+    branches: 
+      - master  
 
 jobs:
   openselery:

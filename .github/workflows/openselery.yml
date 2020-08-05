@@ -11,9 +11,8 @@ name: openselery
 #     - v*  # Event to all release tags
         
 on:
-  push:
-    branches-ignore:
-      - master
+#    branches-ignore:
+#      - master
     pull_request:
     types:
       - opened

@@ -128,7 +128,7 @@ jobs:
             repository: ${{ env.GITHUB_REPOSITORY_NEW }}.wiki
             path: wiki
             
-      - name: Add Badge yaml
+      - name: Add Badge Json
         run: |
          echo "Change dir to ${HOME}/work"
          cd ./wiki

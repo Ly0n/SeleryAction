@@ -13,6 +13,7 @@ A project template that is showing on how to integrated Bitcoin payouts into Git
 * Dependencies scanning for most languages to include all developers. 
 * Only the sender needs an Coinbase account in the first instance.
 * Investor creates a transparent payout in your Project CI logs and Artifacts.
+* Payout will be triggered on merge after pull request 
   
 
 ## Github Action Integration

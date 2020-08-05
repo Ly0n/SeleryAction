@@ -128,7 +128,7 @@ jobs:
             repository: ${{ env.GITHUB_REPOSITORY_NEW }}.wiki
             path: wiki
             
-      - name: Add Badge Json
+      - name: Copy balance badge json files and visualization files to wiki
         run: |
          echo "Change dir to ${HOME}/work"
          cd ./wiki
@@ -140,7 +140,6 @@ jobs:
          git status
          git add . -A
          git commit -m "Action generated"
-         pwd
                 
       - name: Push changes
         uses: ad-m/github-push-action@master

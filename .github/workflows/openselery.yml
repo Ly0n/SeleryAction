@@ -93,10 +93,11 @@ jobs:
                 #    - https://github.com/python/cpython
                 #    - https://github.com/docker/docker-ce
               EOF
-              cat ${config_folder}/tooling_repos.yml 
+              cat ${TARGET_PROJECT}/tooling_repos.yml 
               else 
                   echo "Use existing local selery.yml"
-                  cat ${config_folder}/tooling_repos.yml  
+                  cat ${TARGET_PROJECT}/tooling_repos.yml
+                  cp ${TARGET_PROJECT}/tooling_repos.yml $config_folder/selery.yml  
               fi 
       # Run Openselery on the current folder.
       - name: Run openselery on sources

@@ -1,4 +1,5 @@
-# OpenSelery Template for Github Action Integration
+# SeleryAction
+> OpenSelery Template for Simple Github Action Integration
 
 [![](https://img.shields.io/gitter/room/protontypes/openselery)](https://gitter.im/protontypes/openselery)        
 [![Actions Status](https://github.com/protontypes/seleryexample/workflows/openselery/badge.svg)](https://github.com/protontypes/seleryexample/actions) 

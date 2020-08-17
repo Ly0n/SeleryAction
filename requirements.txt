@@ -6,11 +6,3 @@ apache-beam==2.16.0
 appdirs==1.4.3
 arandr==0.1.10
 asn1crypto==1.1.0
-astor==0.8.1
-astroid==2.2.5
-astropy==4.0
-attrdict==2.0.1
-attrs==19.2.0
-audioread==2.1.8
-blimpy==1.4.2
-bokeh==1.4.0

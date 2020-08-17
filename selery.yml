@@ -18,7 +18,7 @@ included_dependency_contributor: 2
 ## base weight for all included contributors
 uniform_weight: 30
 # use release tags to increased the weight of the last release contributors
-consider_releases: True 
+consider_releases: False
 ## last releases additionaly weighted.
 releases_included: 3
 ## release weights
@@ -37,8 +37,8 @@ max_payout_per_run: 0.000022
 # payout configurations
 bitcoin_address: "3PVdiyLPR7MgaeFRJLW9mfuESZS2aAPX9w"
 ## check that the public bitcoin address matches the secret coinbase address
-check_equal_private_and_public_address: True
+check_equal_private_and_public_address: False
 ## Skip email sended by coinbase
-skip_email: False
+skip_email: True
 ## message send with every coinbase email. Never send an URL.
 email_note: "Fresh OpenSelery Funding"

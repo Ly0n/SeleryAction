@@ -47,7 +47,7 @@ jobs:
         run: |
               echo "Use existing local selery.yml"
               cat ${TARGET_PROJECT}/tooling_repos.yml
-              cp ${TARGET_PROJECT}/tooling_repos.yml $config_folder/selery.yml  
+              cp ${TARGET_PROJECT}/tooling_repos.yml $config_folder/tooling_repos.yml  
 
       - name: Run openselery on sources
         run:  > 
@@ -88,6 +88,8 @@ jobs:
          cp ${results_folder}/transactions_per_day.png ./openselery/
          cp ${results_folder}/transactions_per_month.png ./openselery/
          cp ${results_folder}/transactions_per_user.png ./openselery/
+         cp ${results_folder}/wallet_balance_per_day.png ./openselery/
+         cp ${results_folder}/wallet_qrcode.png ./openselery/
          git config user.name github-actions
          git config user.email github-actions@github.com
          git status

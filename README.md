@@ -16,12 +16,11 @@ A project template that is showing on how to integrated Bitcoin payouts into Git
 * Dependencies scanning for most languages to include all developers. 	
 * Only the sender needs an Coinbase account in the first instance.	
 * Investor creates a transparent payout in your Project CI logs and Artifacts.	
-* Payout will be triggered on merge after pull request.
-  
+* Payout will be triggered on merge after pull request. 
 
 ## Github Action Integration
 
-1. The [Gitub](https://github.com/settings/tokens) and [Libraries.io](https://libraries.io/api) tokens are easy to obtain. Simulate payouts without the [coinbase token](https://www.coinbase.com/settings/api) to find the right settings. 
+1. The [Gitub](https://github.com/settings/tokens) and [Libraries.io](https://libraries.io/api) tokens are easy to obtain. Simulate payouts without the [coinbase token](https://www.coinbase.com/settings/api) to find the right settings. Set `include_dependencies = False for testing SeleryAction without a Libraries.io token.
 
 2. Create a dedicated Coinbase account with limited amounts. OpenSelery is based on the APIs of The Libraries.io, Github and Coinbase. To provide service you need to create tokens in the corresponding accounts. Setting simulation to false will require your Coinbase tokens. Configure the [access control settings](https://github.com/protontypes/openselery/wiki/Coinbase-Settings) of the automated Coinbase account.
 

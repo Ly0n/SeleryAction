@@ -8,7 +8,7 @@
 [![Donate with bitcoin](https://badgen.net/badge/Donate/3PVdiyLPR7MgaeFRJLW9mfuESZS2aAPX9w/orange?icon=bitcoin)](https://raw.githubusercontent.com/wiki/protontypes/openselery/seleryaction/wallet_qrcode.png)  
 
 
-A project template that is showing on how to integrated Bitcoin payouts into Github Action Workflows:     
+A project template that is showing on how to integrated Bitcoin payouts with [OpenSelery](https://github.com/protontypes/openselery) into Github Action workflows:     
 
 * Software defined developers payout fully transparent to the bones for your Github project.
 * Fully customizeable payout weights.
@@ -22,9 +22,9 @@ A project template that is showing on how to integrated Bitcoin payouts into Git
 
 1. The [Gitub](https://github.com/settings/tokens) and [Libraries.io](https://libraries.io/api) tokens are easy to obtain. Simulate payouts without the [coinbase token](https://www.coinbase.com/settings/api) to find the right settings. Set `include_dependencies = False for testing SeleryAction without a Libraries.io token.
 
-2. Create a dedicated Coinbase account with limited amounts. OpenSelery is based on the APIs of The Libraries.io, Github and Coinbase. To provide service you need to create tokens in the corresponding accounts. Setting simulation to false will require your Coinbase tokens. Configure the [access control settings](https://github.com/protontypes/openselery/wiki/Coinbase-Settings) of the automated Coinbase account.
+2. Create a dedicated Coinbase account with limited amounts. OpenSelery is based on the APIs of The Libraries.io, Github and Coinbase. To provide service you need to create tokens in the corresponding accounts. Setting `simulation = false` will require your Coinbase tokens. Configure the [access control settings](https://github.com/protontypes/openselery/wiki/Coinbase-Settings) of the automated Coinbase account.
 
-3. Never transfer or store large values with automated cryptocurrency wallets. Use recurring automated transaction from another account to recharge you wallet on a regular base. 
+3. Never transfer or store large values with automated cryptocurrency wallets. Use [recurring automated buys](https://blog.coinbase.com/easier-recurring-buys-and-sells-on-coinbase-9a3cd7ea934e) to recharge you wallet on a regular base. 
 
 4. Transfer some money to this wallet for testing. See the [price list](https://help.coinbase.com/en/coinbase/trading-and-funding/pricing-and-fees/fees.html) for transferring money to the Coinbase account.
 

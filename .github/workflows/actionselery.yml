@@ -101,6 +101,6 @@ jobs:
         with:
          github_token: ${{ secrets.PAT_SELERY }}
          repository: ${{ env.GITHUB_REPOSITORY_NEW }}.wiki
-         directory: wiki
+         directory: wiki        
         
 

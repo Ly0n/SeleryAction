@@ -19,7 +19,7 @@ A project template that is showing on how to integrated Cryptocurrency payouts w
 ## Github Action Integration
 
 ### Getting Started
-1. Press the "Use this Template" to integrate OpenSelery into a new project or copy the `.github/actions/openselery.yml` and `selery.yml` into your existing project. You can donate to your favorite    
+1. Press the "Use this Template" to integrate OpenSelery into a new project or copy the `.github/actions/openselery.yml` and `selery.yml` into your existing project. You can donate to your favorite open source project on github by forking it and integrating ActionSelery 
 2. The [Github](https://github.com/settings/tokens) token is easy to obtain. Add a privat access token of your user as a [secret](https://help.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets) with the name `PAT_SELERY` to your project settings. Set `simulation = True` and `include_dependencies = False` in your `selery.yml` for testing OpenSelery without a Libraries.io token and Coinbase tokens.
 3. Enable you Github Actions by pressing the Action tab on on your project main page.
 4. Create some commits on your project with an user that shows his email address in his Github profile. Push this commits to you master branch. OpenSelery should not run in simulation mode on your project. Check the Action logs for further information.

@@ -99,7 +99,7 @@ jobs:
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
-         github_token: ${{ secrets.PAT_LYON }}
+         github_token: ${{ secrets.PAT_SELERY }}
          repository: ${{ env.GITHUB_REPOSITORY_NEW }}.wiki
          directory: wiki
         

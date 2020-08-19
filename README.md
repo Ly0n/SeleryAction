@@ -7,7 +7,7 @@
 ![Balance](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/wiki/protontypes/seleryexample/openselery/balance_badge.json&style=flat&logo=bitcoin)  ![Balance](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/wiki/protontypes/seleryexample/openselery/native_balance_badge.json&style=flat&logo=bitcoin)
 [![Donate with bitcoin](https://badgen.net/badge/Donate/3PVdiyLPR7MgaeFRJLW9mfuESZS2aAPX9w/orange?icon=bitcoin)](https://raw.githubusercontent.com/wiki/protontypes/openselery/seleryaction/wallet_qrcode.png)  
 
-A project template that is showing on how to integrated Bitcoin payouts with [OpenSelery](https://github.com/protontypes/openselery) into Github Action workflows:     
+A project template that is showing on how to integrated Cryptocurrency payouts with [OpenSelery](https://github.com/protontypes/openselery) in Github Action workflows:     
 * Software defined developers payout fully transparent to the bones for your Github project.
 * Fully customizeable payout weights.
 * Transparent payout history.
@@ -21,7 +21,7 @@ A project template that is showing on how to integrated Bitcoin payouts with [Op
 ### Getting Started:
 1. Press the "Use this Template" to integrate OpenSelery into a new project or copy the `.github/actions/openselery.yml` and `selery.yml` into your existing project.   
 2. The [Github](https://github.com/settings/tokens) token is easy to obtain. Add a privat access token of your user as a [secret](https://help.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets) with the name `PAT_SELERY` to your project settings. Set `simulation = True` and `include_dependencies = False` in your `selery.yml` for testing OpenSelery without a Libraries.io token and Coinbase tokens.
-3. Enable you Github Actions by pressing the Action Tab on on your project main page.
+3. Enable you Github Actions by pressing the Action tab on on your project main page.
 4. Create some commits on your project with an user that shows his email address in his Github profile. Push this commits to you master branch. OpenSelery should not run in simulation mode on your project. Check the Action logs for further information.
 
 ### Add Dependency Scanning:

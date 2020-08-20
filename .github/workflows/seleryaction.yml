@@ -1,4 +1,4 @@
-name: actionsselery
+name: seleryaction
         
 on:
   push:
@@ -7,7 +7,7 @@ on:
 
 jobs:
   openselery:
-    name: actionselery
+    name: seleryaction
     runs-on: ubuntu-latest
     steps:
       # Check out the repo openselery is working on.

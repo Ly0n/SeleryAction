@@ -56,7 +56,7 @@ jobs:
                 -v $PWD/:/home/selery/runningrepo/
                 -v $results_folder:/home/selery/results/
                 -v $config_folder:/home/selery/config/
-                libreselery
+                protontypes/libreselery
                 --directory=/home/selery/runningrepo/ --config=/home/selery/config/selery.yml  --results_dir=/home/selery/results/  --tooling=/home/selery/config/tooling_repos.yml
 
       - name: Upload the artifacts

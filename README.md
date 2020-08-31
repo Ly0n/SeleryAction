@@ -15,7 +15,7 @@ A project template that shows how to integrate [LibreSelery](https://github.com/
 
 ### Getting Started
 1. Press the "Use this Template" button to integrate LibreSelery into a new project or copy the `.github/actions/libreselery.yml` and `selery.yml` into your existing project.
-2. For running LibreSelery, a [GitHub token](https://github.com/settings/tokens) is needed, which you can obtain easily through your GitHub settings. Then add the private access token of your user as a [secret](https://help.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets) with the name `PAT_SELERY` to your project settings.
+2. For running LibreSelery, a [GitHub token](https://github.com/settings/tokens) is needed, which you can obtain easily through your GitHub settings (it does not need any scopes). Then add the private access token of your user as a [secret](https://help.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets) with the name `PAT_SELERY` to your project settings.
 3. Set `simulation: True` and `include_dependencies: False` in your `selery.yml` for testing LibreSelery without a Libraries.io token or Coinbase tokens (if you have not created a wallet yet set `perform_wallet_validation: False`).
 3. Enable your Github Actions by pressing the Action tab on your project main page.
 4. For further testing, create some commits in your project. Verify that the user has a public email address in the GitHub profile. Push these commits to you master branch. LibreSelery should now run in simulation mode on your project. Check the Action logs for further information. Don't be surprised, the action will fail because no payout receipt can be generated in simulation mode.

@@ -46,7 +46,7 @@ jobs:
                cat ${TARGET_PROJECT}/selery.yml
                cp ${TARGET_PROJECT}/selery.yml $config_folder/selery.yml
 
-      - name: Run LibreSelery on its own sources
+      - name: Run LibreSelery on repository
         run:  >
                 docker run --rm
                 --env GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}

@@ -1,7 +1,7 @@
 # SeleryAction
 LibreSelery Template for Simple Github Action Integration
 
-[![](https://img.shields.io/gitter/room/protontypes/libreselery)](https://gitter.im/protontypes/libreselery)  
+[![Join the chat at https://gitter.im/protontypes/LibreSelery](https://badges.gitter.im/protontypes/LibreSelery.svg)](https://gitter.im/protontypes/LibreSelery?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![stability-experimental](https://img.shields.io/badge/stability-experimental-orange.svg)](https://github.com/emersion/stability-badges#experimental)
 
 [![Actions Status](https://github.com/protontypes/seleryaction/workflows/seleryaction/badge.svg)](https://github.com/protontypes/seleryaction/actions) 

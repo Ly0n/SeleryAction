@@ -1,8 +1,0 @@
-absl-py==0.9.0
-alabaster==0.7.12
-altgraph==0.17
-anytree==2.7.1
-apache-beam==2.16.0
-appdirs==1.4.3
-arandr==0.1.10
-asn1crypto==1.1.0

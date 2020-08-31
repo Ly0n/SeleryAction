@@ -1,11 +1,13 @@
 # SeleryAction
 LibreSelery Template for Simple Github Action Integration
 
-[![](https://img.shields.io/gitter/room/protontypes/libreselery)](https://gitter.im/protontypes/libreselery)        
-[![Actions Status](https://github.com/protontypes/seleryaction/workflows/seleryaction/badge.svg)](https://github.com/protontypes/seleryaction/actions) 
+[![](https://img.shields.io/gitter/room/protontypes/libreselery)](https://gitter.im/protontypes/libreselery)  
 [![stability-experimental](https://img.shields.io/badge/stability-experimental-orange.svg)](https://github.com/emersion/stability-badges#experimental)
+
+[![Actions Status](https://github.com/protontypes/seleryaction/workflows/seleryaction/badge.svg)](https://github.com/protontypes/seleryaction/actions) 
 ![Balance](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/wiki/protontypes/seleryexample/libreselery/balance_badge.json&style=flat&logo=bitcoin)  ![Balance](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/wiki/protontypes/seleryexample/libreselery/native_balance_badge.json&style=flat&logo=bitcoin)
 [![Donate with bitcoin](https://badgen.net/badge/Donate/3PVdiyLPR7MgaeFRJLW9mfuESZS2aAPX9w/orange?icon=bitcoin)](https://raw.githubusercontent.com/wiki/protontypes/libreselery/seleryaction/wallet_qrcode.png)  
+[![Transaction History](https://badgen.net/badge/icon/Transaction%20History?icon=bitcoin&label)](https://github.com/protontypes/actionselery/wiki/Transaction-History)
 
 A project template that shows how to integrate payouts in cryptocurrency with [LibreSelery](https://github.com/protontypes/libreselery) into GitHub Action workflows: 
 ## Github Action Integration

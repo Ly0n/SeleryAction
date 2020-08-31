@@ -23,13 +23,13 @@ A project template that shows how to integrate payouts in cryptocurrency with [L
 2. LibreSelery supports all dependency manifesto files that are supported by [bibliothecary](https://github.com/librariesio/bibliothecary).
 3. Push the changes to your master branch and see LibreSelery gather contributors of your dependencies to include in the payout. 
 
-### Go Live and Payout
+### Go Live and Payout Contributors
 1. Buy a small amount of cryptocurrency with Coinbase. See the [price list](https://help.coinbase.com/en/coinbase/trading-and-funding/pricing-and-fees/fees.html) for transferring money to the Coinbase account. LibreSelery will require your Coinbase tokens. Configure the [access control settings](https://github.com/protontypes/libreselery/wiki/Coinbase-Settings) of the automated Coinbase account with the required permissions. Do not give the token more permissions than recommended. 
 2. Never transfer or store large amounts in automated cryptocurrency wallets. Use [recurring automated buys](https://blog.coinbase.com/easier-recurring-buys-and-sells-on-coinbase-9a3cd7ea934e) to recharge you wallet on a regular base. 
 3. Add the token of Coinbase to your project secrets as `COINBASE_TOKEN` and `COINBASE_SECRET`.
 4. Set the simulation parameter to `False` to enable payout. You should go live before simulating once with the current setting.
 5. Since LibreSelery is using your Wiki to store LibreSelery information like transaction history or QR code you need to create at least one page in your wiki so that Github creates another repository that is connected to the project. A successful run will push Action artifacts to the `libreselery` folder in the wiki.
-6. Set the `perform_wallet_validation = False` and `bitcoin_address: "<your Bitcoin Address>"`.  [Here](https://www.coinbase.com/settings/crypto-addresses) you will find your addresses on the coinbase website. Push the changes of the selery.yml to your master branch.
+6. Set the `perform_wallet_validation = True` and `bitcoin_address: "<your Bitcoin Address>"`. You will find your addresses on the coinbase website [here](https://www.coinbase.com/settings/crypto-addresses). Push the changes of the selery.yml to your master branch.
 7. Check Action logs to see how LibreSelery is distributing investment into your project. 
 8. See the transaction history of your wallet under `https://github.com/<your_namespace>/<your_project_name>.wiki.git/libreselery` and the donation website for your project under `https://github.com/<your_namespace>/<your_project_name>/wiki/Donation
 9. Add a [`FUNDING.yml`](https://github.com/protontypes/seleryaction/blob/master/.github/FUNDING.yml) file to your project .github folder to create a Github Sponsor Button with LibreSelery. 
